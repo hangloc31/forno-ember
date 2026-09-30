@@ -95,6 +95,11 @@ body {
 
 body.is-locked { overflow: hidden; }
 
+/* The hidden attribute only maps to display:none in the UA stylesheet, so any
+   author-level display rule (e.g. .tabpanel's grid at >=900px) silently defeats
+   it. This reset keeps hidden authoritative for every component. */
+[hidden] { display: none !important; }
+
 img, svg { display: block; max-width: 100%; }
 img { height: auto; background: var(--parchment-2); color: transparent; }
 
