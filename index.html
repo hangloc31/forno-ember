@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno Ember — Wood-Fired Italian Kitchen</title>
+<meta name="description" content="Forno Ember is a wood-fired Italian kitchen in the Old Quarter. Handmade pasta, blistered Neapolitan pizza and seasonal produce cooked over a white-oak hearth. Reserve a table.">
+<meta name="theme-color" content="#9A3412">
+
+<meta property="og:title" content="Forno Ember — Wood-Fired Italian Kitchen">
+<meta property="og:description" content="Handmade pasta and blistered pizza from a white-oak hearth.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=70">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=70">
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="Forno Ember, home">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2c1.6 3.1 1.1 5.1-.2 6.9-1.5 2-3.4 3.3-3.4 6.1a3.6 3.6 0 0 0 7.2 0c0-1.2-.3-2.1-.9-3.1 3.1 1.6 5 4.3 5 7.4A7.7 7.7 0 0 1 12 22a7.7 7.7 0 0 1-7.7-7.7C4.3 8.2 8.4 4.6 12 2Z"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Forno Ember</span>
+        <span class="brand-sub">Old Quarter</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#menu" data-navlink>Menu</a></li>
+        <li><a href="#chef" data-navlink>Chef</a></li>
+        <li><a href="#visit" data-navlink>Visit</a></li>
+        <li><a href="#gallery" data-navlink>Gallery</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="#reserve" data-navlink>Reserve a table</a>
+    </nav>
+
+    <button class="nav-toggle" type="button" data-nav-toggle
+            aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="mobile-drawer" data-drawer hidden>
+  <div class="drawer-scrim" data-drawer-scrim></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="drawer-head">
+      <span class="drawer-title">Menu</span>
+      <button class="icon-btn" type="button" data-drawer-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="drawer-list">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#chef">The Chef</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-block" href="#reserve">Reserve a table</a>
+    <div class="drawer-foot">
+      <a href="tel:+15550142266">(555) 014-2266</a>
+      <span>14 Ember Lane, Old Quarter</span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <div class="hero-img"></div>
+      <div class="hero-scrim"></div>
+      <div class="hero-glow"></div>
+    </div>
+
+    <div class="shell hero-inner">
+      <p class="eyebrow eyebrow-light">Wood-fired Italian kitchen · Est. 2016</p>
+      <h1 class="hero-title" id="hero-title">Forno <em>Ember</em></h1>
+      <p class="hero-lede">
+        Handmade pasta and blistered pizza, pulled from a white-oak hearth in
+        the middle of the room. Everything else is detail.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#reserve" data-navlink>Reserve a table</a>
+        <a class="btn btn-ghost btn-lg" href="#menu" data-navlink>See the menu</a>
+      </div>
+
+      <ul class="hero-meta">
+        <li>
+          <strong>4.9</strong>
+          <span class="stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+          <span>1,240 reviews</span>
+        </li>
+        <li><strong>Bib Gourmand</strong><span>Michelin Guide 2025</span></li>
+        <li><strong>Tue – Sun</strong><span>Closed Mondays</span></li>
+      </ul>
+    </div>
+
+    <a class="hero-cue" href="#menu" aria-label="Scroll to menu">
+      <span class="hero-cue-line" aria-hidden="true"></span>
+      <span class="hero-cue-text">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-set">
+        <span>White-oak hearth</span><span class="tick">✦</span>
+        <span>Handmade pasta daily</span><span class="tick">✦</span>
+        <span>48-hour cured</span><span class="tick">✦</span>
+        <span>Seasonal Italian produce</span><span class="tick">✦</span>
+        <span>Wild yeast sourdough</span><span class="tick">✦</span>
+      </div>
+      <div class="ticker-set">
+        <span>White-oak hearth</span><span class="tick">✦</span>
+        <span>Handmade pasta daily</span><span class="tick">✦</span>
+        <span>48-hour cured</span><span class="tick">✦</span>
+        <span>Seasonal Italian produce</span><span class="tick">✦</span>
+        <span>Wild yeast sourdough</span><span class="tick">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MENU ============ -->
+  <section class="section" id="menu" aria-labelledby="menu-title">
+    <div class="shell">
+      <header class="section-head">
+        <p class="eyebrow">The menu</p>
+        <h2 class="section-title" id="menu-title">A short list, <em>written daily</em></h2>
+        <p class="section-lede">
+          The card changes with the market. What follows is a good idea of what
+          you might find — the board in the room is always the honest version.
+        </p>
+      </header>
+
+      <div class="menu-tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label="Menu categories">
+          <button class="tab" type="button" role="tab" id="tab-antipasti"
+                  aria-controls="panel-antipasti" aria-selected="true" tabindex="0">Antipasti</button>
+          <button class="tab" type="button" role="tab" id="tab-pasta"
+                  aria-controls="panel-pasta" aria-selected="false" tabindex="-1">Pasta</button>
+          <button class="tab" type="button" role="tab" id="tab-pizza"
+                  aria-controls="panel-pizza" aria-selected="false" tabindex="-1">Pizza</button>
+          <button class="tab" type="button" role="tab" id="tab-dolci"
+                  aria-controls="panel-dolci" aria-selected="false" tabindex="-1">Dolci</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-antipasti" aria-labelledby="tab-antipasti" tabindex="0">
+          <div class="menu-figure">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=70"
+                 srcset="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=70 600w,
+                         https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=70 1000w"
+                 sizes="(max-width: 900px) 100vw, 44vw" width="900" height="1200" loading="lazy" decoding="async"
+                 alt="Hands raising glasses of red wine around a table.">
+            <span class="menu-figure-tag">To begin</span>
+          </div>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item-head"><h3>Burrata &amp; white peach</h3><span class="price">18</span></div><p>Basil oil, aged balsamic, sea salt, sourdough.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Charred octopus</h3><span class="price">26</span></div><p>Smoked potato, nduja, parsley, lemon.</p></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Fennel &amp; sage sausage</h3><span class="price">21</span></div><p>Grilled bread, mostarda, house mustard.</p></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Ricotta &amp; honey</h3><span class="price">15</span></div><p>Warm focaccia, chestnuts, orange zest.</p><span class="diet">V</span></li>
+          </ul>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-pasta" aria-labelledby="tab-pasta" tabindex="0" hidden>
+          <div class="menu-figure">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=70"
+                 srcset="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=70 600w,
+                         https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1000&q=70 1000w"
+                 sizes="(max-width: 900px) 100vw, 44vw" width="900" height="1200" loading="lazy" decoding="async"
+                 alt="Penne in a rich tomato and chilli sauce, finished with cheese.">
+            <span class="menu-figure-tag">Rolled at 7am</span>
+          </div>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item-head"><h3>Cacio e pepe</h3><span class="price">24</span></div><p>Tonq guanciale, pecorino romano, cracked black pepper.</p></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Penne all'arrabbiata</h3><span class="price">22</span></div><p>San Marzano, 'nduja, garlic, Calabrian chilli.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Tagliatelle al ragù</h3><span class="price">27</span></div><p>Six-hour beef and pork ragù, parmesan, celery.</p></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Wild mushroom risotto</h3><span class="price">25</span></div><p>Porcini, thyme, brown butter, aged cheese.</p><span class="diet">V</span></li>
+          </ul>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-pizza" aria-labelledby="tab-pizza" tabindex="0" hidden>
+          <div class="menu-figure">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=70"
+                 srcset="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=70 600w,
+                         https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=70 1000w"
+                 sizes="(max-width: 900px) 100vw, 44vw" width="900" height="1200" loading="lazy" decoding="async"
+                 alt="A Neapolitan margherita pizza with torn basil on a marble counter.">
+            <span class="menu-figure-tag">60-second bake</span>
+          </div>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item-head"><h3>Margherita</h3><span class="price">19</span></div><p>Fior di latte, San Marzano, basil, olive oil.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Diavola</h3><span class="price">23</span></div><p>Spicy salami, chilli honey, mozzarella, oregano.</p></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Funghi</h3><span class="price">23</span></div><p>Taleggio, thyme, roasted mushroom, garlic cream.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Burrata &amp; rocket</h3><span class="price">25</span></div><p>Burst tomato, lemon, rocket, parmigiano.</p><span class="diet">V</span></li>
+          </ul>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-dolci" aria-labelledby="tab-dolci" tabindex="0" hidden>
+          <div class="menu-figure">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70"
+                 srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=70 600w,
+                         https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=70 1000w"
+                 sizes="(max-width: 900px) 100vw, 44vw" width="900" height="1200" loading="lazy" decoding="async"
+                 alt="A finished plate at a candlelit table, photographed just before service.">
+            <span class="menu-figure-tag">Made in-house</span>
+          </div>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item-head"><h3>Tiramisù</h3><span class="price">13</span></div><p>Espresso-soaked savoiardi, mascarpone, dark cocoa.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Panna cotta</h3><span class="price">12</span></div><p>Vanilla bean, macerated cherries, amaretto.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Affogato</h3><span class="price">9</span></div><p>Double espresso over fior di latte gelato.</p><span class="diet">V</span></li>
+            <li class="menu-item"><div class="menu-item-head"><h3>Vin santo</h3><span class="price">11</span></div><p>Chilled, with cantucci and almonds.</p><span class="diet">VG</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="menu-foot">
+        <strong>Dining room:</strong> a la carte. <strong>Chef's Table:</strong> six courses,
+        $95 per guest, Wednesday and Thursday only. Kids' menu for under twelves.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ RESERVE ============ -->
+  <section class="section section-parchment" id="reserve" aria-labelledby="reserve-title">
+    <div class="shell reserve-grid">
+      <div class="reserve-copy">
+        <p class="eyebrow">Reservations</p>
+        <h2 class="section-title" id="reserve-title">Book the <em>hearth</em></h2>
+        <p class="section-lede">
+          Tables are held for 15 minutes past the booking time. For parties of
+          nine or more, or the whole room, give us a call and we'll sort you out
+          properly.
+        </p>
+        <dl class="info-list">
+          <div class="info-row">
+            <dt>Phone</dt>
+            <dd><a href="tel:+15550142266">(555) 014-2266</a></dd>
+          </div>
+          <div class="info-row">
+            <dt>Tue – Thu</dt>
+            <dd>5:00 pm – 10:00 pm</dd>
+          </div>
+          <div class="info-row">
+            <dt>Fri – Sat</dt>
+            <dd>5:00 pm – 11:00 pm</dd>
+          </div>
+          <div class="info-row">
+            <dt>Sunday</dt>
+            <dd>4:00 pm – 9:00 pm</dd>
+          </div>
+          <div class="info-row">
+            <dt>Monday</dt>
+            <dd><span class="muted-note">Closed — kitchen rest day</span></dd>
+          </div>
+        </dl>
+        <p class="fineprint">
+          Large parties (13+) and buyouts are handled by phone only.
+        </p>
+      </div>
+
+      <div class="reserve-card">
+        <!-- success state -->
+        <div class="confirm" data-confirm hidden>
+          <div class="confirm-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3 class="confirm-title">You're on the books</h3>
+          <p class="confirm-lede">
+            Thanks, <strong data-confirm-name>friend</strong>. We've pencilled you in —
+            a note is on its way to <strong data-confirm-email>your inbox</strong>.
+          </p>
+          <dl class="confirm-details">
+            <div><dt>Reference</dt><dd class="mono" data-confirm-ref>—</dd></div>
+            <div><dt>Guest</dt><dd data-confirm-party>—</dd></div>
+            <div><dt>When</dt><dd data-confirm-when>—</dd></div>
+            <div><dt>Where</dt><dd>14 Ember Lane, Old Quarter</dd></div>
+          </dl>
+          <p class="confirm-note">
+            Need to change something? Call <a href="tel:+15550142266">(555) 014-2266</a>
+            and quote your reference.
+          </p>
+          <button class="btn btn-outline btn-block" type="button" data-reset-form>
+            Make another reservation
+          </button>
+        </div>
+
+        <!-- form state -->
+        <form class="res-form" data-res-form novalidate>
+          <h3 class="form-title">Reserve a table</h3>
+
+          <div class="error-summary" data-error-summary tabindex="-1" role="alert" hidden>
+            <h4 id="error-summary-title">There is a problem</h4>
+            <ul data-error-list></ul>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="r-date">Date <span class="req" aria-hidden="true">*</span></label>
+              <input type="date" id="r-date" name="date" required
+                     autocomplete="off" aria-describedby="e-date">
+              <p class="field-error" id="e-date" data-error></p>
+            </div>
+            <div class="field">
+              <label for="r-time">Time <span class="req" aria-hidden="true">*</span></label>
+              <select id="r-time" name="time" required aria-describedby="e-time e-time-hint">
+                <option value="">Choose a seating</option>
+              </select>
+              <p class="field-hint" id="e-time-hint">Kitchen takes last orders 30 min before close.</p>
+              <p class="field-error" id="e-time" data-error></p>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="r-party">Party size <span class="req" aria-hidden="true">*</span></label>
+              <select id="r-party" name="party" required aria-describedby="e-party">
+                <option value="">Guests</option>
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+                <option value="5">5 guests</option>
+                <option value="6">6 guests</option>
+                <option value="7">7 guests</option>
+                <option value="8">8 guests</option>
+                <option value="9">9 guests</option>
+                <option value="10">10 guests</option>
+                <option value="11">11 guests</option>
+                <option value="12">12 guests</option>
+                <option value="13">13+ (we'll call you)</option>
+              </select>
+              <p class="field-error" id="e-party" data-error></p>
+            </div>
+            <div class="field">
+              <label for="r-occasion">Occasion</label>
+              <select id="r-occasion" name="occasion">
+                <option value="">Just dinner</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Date night</option>
+                <option>Business dinner</option>
+                <option>Celebration</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="r-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="r-name" name="name" required
+                   autocomplete="name" aria-describedby="e-name" placeholder="Giulia Bianchi">
+            <p class="field-error" id="e-name" data-error></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="r-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="r-email" name="email" required
+                     autocomplete="email" aria-describedby="e-email" placeholder="you@example.com">
+              <p class="field-error" id="e-email" data-error></p>
+            </div>
+            <div class="field">
+              <label for="r-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="r-phone" name="phone" required
+                     autocomplete="tel" aria-describedby="e-phone" placeholder="(555) 000-0000">
+              <p class="field-error" id="e-phone" data-error></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="r-notes">Anything we should know?</label>
+            <textarea id="r-notes" name="notes" rows="3"
+                      aria-describedby="e-notes r-notes-count"
+                      placeholder="Allergies, access needs, a seat near the hearth…"></textarea>
+            <p class="field-hint" id="r-notes-count" data-char-count>0 / 400</p>
+            <p class="field-error" id="e-notes" data-error></p>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>
+            <span class="btn-label">Confirm reservation</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+
+          <p class="form-fineprint">
+            We'll only use your details for this booking. This demo form doesn't
+            send anything anywhere — see the note in the footer.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHEF ============ -->
+  <section class="section" id="chef" aria-labelledby="chef-title">
+    <div class="shell chef-grid">
+      <div class="chef-portrait reveal">
+        <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=800&q=70"
+             srcset="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=500&q=70 500w,
+                     https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=900&q=70 900w"
+             sizes="(max-width: 900px) 92vw, 38vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="Chef Marco Bellini standing in the kitchen with his arms folded, wearing a white jacket and apron.">
+        <div class="chef-badge">
+          <span class="chef-badge-k">Chef &amp; owner</span>
+          <span class="chef-badge-n">Marco Bellini</span>
+        </div>
+      </div>
+
+      <div class="chef-body">
+        <p class="eyebrow">The chef</p>
+        <h2 class="section-title" id="chef-title">He left a good kitchen <em>to build his own</em></h2>
+        <div class="prose">
+          <p>
+            Marco trained eleven years in Modena before moving across the water,
+            sick of cooking other people's food. He spent the first eighteen months
+            of Forno Ember building a hearth by hand — a two-tonne white-oak firebox
+            he fires with scrap timber from a mill up the valley, and relights by hand
+            every morning at seven.
+          </p>
+          <p>
+            The kitchen runs on that fire and almost nothing else. No gas, one oven,
+            four burners. It means the bread is genuinely sour, the pizza crust
+            genuinely blistered, and Marco genuinely short-tempered about a cold oven.
+          </p>
+        </div>
+
+        <ul class="signature-list">
+          <li>
+            <span class="sig-mark" aria-hidden="true">01</span>
+            <div><h3>The Ember Margherita</h3><p>Sixty seconds, 485°C, buffalo mozzarella flown in weekly.</p></div>
+          </li>
+          <li>
+            <span class="sig-mark" aria-hidden="true">02</span>
+            <div><h3>Cacio e Pepe, Properly</h3><p>Pecorino romano, cold pasta water, more pepper than looks sensible.</p></div>
+          </li>
+          <li>
+            <span class="sig-mark" aria-hidden="true">03</span>
+            <div><h3>48-Hour Sourdough</h3><p>One flour, one levain kept since the first week of trading.</p></div>
+          </li>
+        </ul>
+
+        <figure class="chef-figure reveal">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=70"
+               srcset="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=70 600w,
+                       https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=70 1000w"
+               sizes="(max-width: 900px) 92vw, 42vw" width="900" height="600" loading="lazy" decoding="async"
+               alt="Chef Marco finishing a plate under the warm service lamps.">
+          <figcaption>Marco plating during Thursday service, at the pass.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section section-ink" id="gallery" aria-labelledby="gallery-title">
+    <div class="shell">
+      <header class="section-head section-head-light">
+        <p class="eyebrow eyebrow-light">The room</p>
+        <h2 class="section-title" id="gallery-title">Come in out of the <em>cold</em></h2>
+      </header>
+    </div>
+    <ul class="gallery">
+      <li class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=70"
+             srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=70 500w,
+                     https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70 900w"
+             sizes="(max-width: 700px) 50vw, 25vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="The dining room: timber booths, banquette seating and soft warm light.">
+      </li>
+      <li class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=70"
+             srcset="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=500&q=70 500w,
+                     https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=900&q=70 900w"
+             sizes="(max-width: 700px) 50vw, 25vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="A pizza topped with torn burrata and peppery greens, sitting in a dark pan.">
+      </li>
+      <li class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=800&q=70"
+             srcset="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=500&q=70 500w,
+                     https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=900&q=70 900w"
+             sizes="(max-width: 700px) 50vw, 25vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="A guest reaching across a candlelit table mid-meal.">
+      </li>
+      <li class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=70"
+             srcset="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=500&q=70 500w,
+                     https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=70 900w"
+             sizes="(max-width: 700px) 50vw, 25vw" width="800" height="1000" loading="lazy" decoding="async"
+             alt="Linguine with clams and chilli, served straight from the pan.">
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="section" id="visit" aria-labelledby="visit-title">
+    <div class="shell visit-grid">
+      <div class="visit-copy">
+        <p class="eyebrow">Visit</p>
+        <h2 class="section-title" id="visit-title">Find us in the <em>Old Quarter</em></h2>
+        <p class="section-lede">
+          Behind the old bookbinder's on Ember Lane. There's no car park — the
+          loading bay on Vespers Lane is the closest, and the number 6 tram stops
+          two minutes away.
+        </p>
+
+        <dl class="info-list">
+          <div class="info-row">
+            <dt>Address</dt>
+            <dd>14 Ember Lane<br><span class="muted-note">Old Quarter, Riverton</span></dd>
+          </div>
+          <div class="info-row">
+            <dt>Phone</dt>
+            <dd><a href="tel:+15550142266">(555) 014-2266</a></dd>
+          </div>
+          <div class="info-row">
+            <dt>Email</dt>
+            <dd><a href="mailto:ciao@fornoember.test">ciao@fornoember.test</a></dd>
+          </div>
+        </dl>
+
+        <div class="visit-actions">
+          <a class="btn btn-primary" data-directions
+             href="https://www.google.com/maps/search/?api=1&amp;query=14+Ember+Lane+Riverton"
+             target="_blank" rel="noopener noreferrer">
+            Get directions
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-outline" href="tel:+15550142266">Call the room</a>
+        </div>
+
+        <div class="visit-note">
+          <h3>Getting here</h3>
+          <ul>
+            <li><strong>Tram 6 / 14</strong> — Vespers Lane stop, 2 min walk</li>
+            <li><strong>Bike racks</strong> — six on the lane, covered</li>
+            <li><strong>Step-free</strong> — through the courtyard entrance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map-canvas" data-map role="region" aria-label="Map showing Forno Ember at 14 Ember Lane, Old Quarter"></div>
+        <div class="map-fallback" data-map-fallback hidden>
+          <div class="map-fallback-inner">
+            <svg class="map-fallback-pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 22s7-6.2 7-11.5A7 7 0 0 0 5 10.5C5 15.8 12 22 12 22Z"/><circle cx="12" cy="10" r="2.6"/>
+            </svg>
+            <h3>Forno Ember</h3>
+            <p>14 Ember Lane, Old Quarter, Riverton</p>
+            <p class="map-fallback-hint">The interactive map couldn't load. The address above and the directions button will get you there.</p>
+            <a class="btn btn-primary" data-directions
+               href="https://www.google.com/maps/search/?api=1&amp;query=14+Ember+Lane+Riverton"
+               target="_blank" rel="noopener noreferrer">Open in Maps</a>
+          </div>
+        </div>
+        <div class="map-card">
+          <p class="map-card-label">You are here</p>
+          <p class="map-card-name">Forno Ember</p>
+          <p class="map-card-addr">14 Ember Lane, Old Quarter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-footer" href="#top" aria-label="Forno Ember, home">
+        <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2c1.6 3.1 1.1 5.1-.2 6.9-1.5 2-3.4 3.3-3.4 6.1a3.6 3.6 0 0 0 7.2 0c0-1.2-.3-2.1-.9-3.1 3.1 1.6 5 4.3 5 7.4A7.7 7.7 0 0 1 12 22a7.7 7.7 0 0 1-7.7-7.7C4.3 8.2 8.4 4.6 12 2Z"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Forno Ember</span>
+          <span class="brand-sub">Old Quarter</span>
+        </span>
+      </a>
+      <p class="footer-tag">One fire, one oven, no gas. Everything since 2016.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h2 class="footer-h">Explore</h2>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#chef">The chef</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2 class="footer-h">Hours</h2>
+      <ul class="footer-hours">
+        <li><span>Tue – Thu</span><span>5 – 10pm</span></li>
+        <li><span>Fri – Sat</span><span>5 – 11pm</span></li>
+        <li><span>Sunday</span><span>4 – 9pm</span></li>
+        <li><span>Monday</span><span class="muted-note">Closed</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-h">Contact</h2>
+      <ul>
+        <li><a href="tel:+15550142266">(555) 014-2266</a></li>
+        <li><a href="mailto:ciao@fornoember.test">ciao@fornoember.test</a></li>
+        <li>14 Ember Lane<br><span class="muted-note">Old Quarter, Riverton</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="shell footer-base">
+    <p>&copy; 2026 Forno Ember. A fictional restaurant, built as a demo.</p>
+    <p class="footer-credits">
+      Photography via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a> ·
+      Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors
+    </p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
